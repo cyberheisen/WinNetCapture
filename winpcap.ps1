@@ -1,7 +1,7 @@
 $etl_file = ".\NetTrace.etl"
 $trace_start = "netsh trace start capture=yes tracefile=" + $etl_file
 $trace_stop = "netsh trace stop"
-$etl2pcap = ".\etl2pcapng "
+$etl2pcap = ".\etl2pcapng " + $etl_file
 $start_results = Invoke-Expression -Command $trace_start
 
 $start_results
@@ -13,6 +13,6 @@ $end_results = Invoke-Expression -command $trace_stop
 $end_results
 Write-Host "Converting ETL file to pcap format"
 
-$etl_convert = Invoke-Expression -command $etl2pcap + $etl_file
+$etl_convert = Invoke-Expression -command $etl2pcap
 Write-Host $etl_convert
 
