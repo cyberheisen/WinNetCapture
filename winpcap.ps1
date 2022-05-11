@@ -8,7 +8,7 @@ $start_results = Invoke-Expression -Command $trace_start
 $start_results
 Write-Host "Press any key to end the packet trace"
 $null = $Host.UI.RawUI.Readkey('NoEcho, IncludeKeyDown')
-Write-Host "Stopping trace"
+Write-Host "Stopping trace...  Hang tight, this may take a while."
 
 $end_results = Invoke-Expression -command $trace_stop
 $end_results
